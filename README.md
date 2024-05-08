@@ -7,6 +7,8 @@ resources for bunch of stuff I want to learn
 # AI AND ML
 - veryvery cool documentation about a lot of stuff [here](https://willjhliang.github.io/notes/Machine-Learning/PGM/%F0%9F%9A%A8-Bayesian-Network)
 # Graphics
+## Lua Game lib
+- [RGlib](https://docs.retrogadgets.game/libs/01-rg_game.html)
 ## OpenGL
 - [tutorial](https://learnopengl.com/Getting-started/Hello-Triangle)
 ## Vulkan
