@@ -1,6 +1,9 @@
 # cool
 resources for bunch of stuff I want to learn
 
+# Emacs
+- [research workflow](https://emacsconf.org/2021/talks/research/)
+
 # Linux stuff
 - eww https://elkowar.github.io/eww/eww.html
 - waybar https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
