@@ -4,6 +4,7 @@ resources for bunch of stuff I want to learn
 # Emacs
 - [research workflow](https://emacsconf.org/2021/talks/research/)
 - [cool blog on use-package](https://ianyepan.github.io/posts/setting-up-use-package/)
+- [crash course on important doom emacs features](https://www.aquabeam.me/tech/doom_emacs_intro/)
 
 # Linux stuff
 - eww https://elkowar.github.io/eww/eww.html
