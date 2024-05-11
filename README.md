@@ -3,6 +3,7 @@ resources for bunch of stuff I want to learn
 
 # Emacs
 - [research workflow](https://emacsconf.org/2021/talks/research/)
+- [cool blog on use-package](https://ianyepan.github.io/posts/setting-up-use-package/)
 
 # Linux stuff
 - eww https://elkowar.github.io/eww/eww.html
