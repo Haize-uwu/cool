@@ -12,6 +12,9 @@ resources for bunch of stuff I want to learn
 # AI AND ML
 - veryvery cool documentation about a lot of stuff [here](https://willjhliang.github.io/notes/Machine-Learning/PGM/%F0%9F%9A%A8-Bayesian-Network)
 # Graphics
+## raylib
+- [cheatsheet](https://www.raylib.com/cheatsheet/raylib_cheatsheet_v5.0.pdf)
+- [raymath](https://www.raylib.com/cheatsheet/raymath_cheatsheet.html)
 ## Lua Game lib
 - [RGlib](https://docs.retrogadgets.game/libs/01-rg_game.html)
 ## OpenGL
