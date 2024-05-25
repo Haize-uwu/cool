@@ -2,6 +2,7 @@
 resources for bunch of stuff I want to learn
 
 # Emacs
+- [setting up emacs for IDE experience](https://github.com/rememberYou/.emacs.d/blob/master/config.org#cmake)
 - [research workflow](https://emacsconf.org/2021/talks/research/)
 - [cool blog on use-package](https://ianyepan.github.io/posts/setting-up-use-package/)
 - [crash course on important doom emacs features](https://www.aquabeam.me/tech/doom_emacs_intro/)
