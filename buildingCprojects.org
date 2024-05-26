@@ -1,0 +1,7 @@
+#+title: Building Cprojects
+* How to build raylib projects in Doom Emacs
+ - after cloning the repo run `cmake -S . -B build`.
+   - generating the build system files `-S` specifies the source directory, -B speicifies
+     build directory.
+ - To Build the project `cmake --build build`, use this with `M-x compile`, when prompted to enter command.
+[Reference](https://github.com/raysan5/raylib-game-template)
