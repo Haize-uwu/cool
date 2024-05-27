@@ -7,6 +7,9 @@ resources for bunch of stuff I want to learn
 - [cool blog on use-package](https://ianyepan.github.io/posts/setting-up-use-package/)
 - [crash course on important doom emacs features](https://www.aquabeam.me/tech/doom_emacs_intro/)
 
+## Org mode
+- [org mode to latex](https://youtu.be/0qHloGTT8XE?si=EL371C1gFZQMDWmD)
+
 # Linux stuff
 - eww https://elkowar.github.io/eww/eww.html
 - waybar https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
