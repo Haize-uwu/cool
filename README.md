@@ -9,6 +9,7 @@ resources for bunch of stuff I want to learn
 
 ## Org mode
 - [org mode to latex](https://youtu.be/0qHloGTT8XE?si=EL371C1gFZQMDWmD)
+- [latex headers](https://jakebox.github.io/youtube/org_latex_video.html)
 
 # Linux stuff
 - eww https://elkowar.github.io/eww/eww.html
