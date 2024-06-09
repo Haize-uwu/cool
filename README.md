@@ -14,6 +14,7 @@ resources for bunch of stuff I want to learn
 # Linux stuff
 - eww https://elkowar.github.io/eww/eww.html
 - waybar https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
+- Setup Swaync for notification ? 
 # AI AND ML
 - veryvery cool documentation about a lot of stuff [here](https://willjhliang.github.io/notes/Machine-Learning/PGM/%F0%9F%9A%A8-Bayesian-Network)
 # Graphics
