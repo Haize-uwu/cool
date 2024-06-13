@@ -31,3 +31,7 @@ resources for bunch of stuff I want to learn
 
 # Random
 - [stanford thing](https://dawn.cs.stanford.edu/)
+
+---
+# Stuff I have actually learnt from this list:
+- ![basic raylib thing](https://imgur.com/a/ztGYED1)
