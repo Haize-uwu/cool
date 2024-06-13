@@ -35,4 +35,4 @@ resources for bunch of stuff I want to learn
 ---
 # Stuff I have actually learnt from this list:
 - basic raylib :
-  - ![window collision and motion](https://i.imgur.com/UPfvI0h.mp4)
+  - ![window collision and motion](https://imgur.com/a/ztGYED1)
