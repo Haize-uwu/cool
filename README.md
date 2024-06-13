@@ -34,4 +34,5 @@ resources for bunch of stuff I want to learn
 
 ---
 # Stuff I have actually learnt from this list:
-- ![basic raylib thing](https://imgur.com/a/ztGYED1)
+- basic raylib :
+  - ![](https://imgur.com/a/ztGYED1)
