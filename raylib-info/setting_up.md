@@ -14,3 +14,4 @@
   In Build/examples all exmaples work correctly including the shader and lighting examples that were buggy
 
   Will Include a make file for general builds...
+- for now use [this](https://github.com/raylib-extras/game-premake)
