@@ -4,6 +4,7 @@
   ```
   git clone https://github.com/raysan5/raylib.git raylib
   cd raylib
+  mkdir build && cdbuild
   ```
 - build using cmake ` cmake -DBUILD_SHARED_LIBS=ON -DUSE_WAYLAND=ON ..`
   - NOTE: I am using openGL version 4.6 but left raylib to build with defaults
