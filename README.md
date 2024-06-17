@@ -17,7 +17,10 @@ resources for bunch of stuff I want to learn
 - Setup Swaync for notification ? 
 # AI AND ML
 - veryvery cool documentation about a lot of stuff [here](https://willjhliang.github.io/notes/Machine-Learning/PGM/%F0%9F%9A%A8-Bayesian-Network)
+
+  
 # Graphics
+## [theoretical stuff](https://www.scratchapixel.com/index.html)
 ## godot
 - [vector math](https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html#doc-vector-math)
 ## raylib
