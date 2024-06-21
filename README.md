@@ -6,6 +6,7 @@ resources for bunch of stuff I want to learn
 - [research workflow](https://emacsconf.org/2021/talks/research/)
 - [cool blog on use-package](https://ianyepan.github.io/posts/setting-up-use-package/)
 - [crash course on important doom emacs features](https://www.aquabeam.me/tech/doom_emacs_intro/)
+- [interesting config](https://babkock.github.io/configs/doom.html)
 
 ## Org mode
 - [org mode to latex](https://youtu.be/0qHloGTT8XE?si=EL371C1gFZQMDWmD)
