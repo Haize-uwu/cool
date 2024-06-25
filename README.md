@@ -1,3 +1,4 @@
+testing commit I bugged it
 # cool
 resources for bunch of stuff I want to learn
 
