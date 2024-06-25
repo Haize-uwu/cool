@@ -32,6 +32,7 @@ resources for bunch of stuff I want to learn
 - [RGlib](https://docs.retrogadgets.game/libs/01-rg_game.html)
 ## OpenGL
 - [tutorial](https://learnopengl.com/Getting-started/Hello-Triangle)
+- [docs](https://www.khronos.org/opengl/wiki/)
 ## Vulkan
 - [Learning Modern 3D Graphics Programming](https://paroj.github.io/gltut/)
 - [Vulkan tutorial](https://docs.vulkan.org/tutorial/latest/00_Introduction.html)
