@@ -31,6 +31,7 @@ resources for bunch of stuff I want to learn
 ## Lua Game lib
 - [RGlib](https://docs.retrogadgets.game/libs/01-rg_game.html)
 ## OpenGL
+- [wikibook](https://en.wikibooks.org/wiki/OpenGL_Programming/Modern_OpenGL_Introduction)
 - [tutorial](https://learnopengl.com/Getting-started/Hello-Triangle)
 - [docs](https://www.khronos.org/opengl/wiki/)
 ## Vulkan
