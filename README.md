@@ -32,6 +32,7 @@ resources for bunch of stuff I want to learn
 ## raylib
 - [cheatsheet](https://www.raylib.com/cheatsheet/raylib_cheatsheet_v5.0.pdf)
 - [raymath](https://www.raylib.com/cheatsheet/raymath_cheatsheet.html)
+- [compile to web](https://thatonegamedev.com/cpp/programming-a-c-game-for-the-web-emscripten/)
 ## Lua Game lib
 - [RGlib](https://docs.retrogadgets.game/libs/01-rg_game.html)
 ## OpenGL
