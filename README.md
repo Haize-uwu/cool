@@ -45,7 +45,25 @@ resources for bunch of stuff I want to learn
 
 # Random
 - [stanford thing](https://dawn.cs.stanford.edu/)
-- [Online virtual machine](https://bellard.org//jslinux/)
+- [Online virtual machine](https://github-wiki-see.page/m/raysan5/raylib/wiki/Working-for-Web-(HTML5))
+   - How I compiled raylib for web:
+   > install emsdk from AUR and setup according to the wiki instructions
+   > cloned raylib into my game directory
+   > in raylib/src
+   > build like this: ```emcc -c rcore.c -Os -Wall -DPLATFORM_WEB -DGRAPHICS_API_OPENGL_ES2
+  emcc -c rshapes.c -Os -Wall -DPLATFORM_WEB -DGRAPHICS_API_OPENGL_ES2
+  emcc -c rtextures.c -Os -Wall -DPLATFORM_WEB -DGRAPHICS_API_OPENGL_ES2
+  emcc -c rtext.c -Os -Wall -DPLATFORM_WEB -DGRAPHICS_API_OPENGL_ES2
+  emcc -c rmodels.c -Os -Wall -DPLATFORM_WEB -DGRAPHICS_API_OPENGL_ES2
+  emcc -c utils.c -Os -Wall -DPLATFORM_WEB
+  emcc -c raudio.c -Os -Wall -DPLATFORM_WEB```
+   > then `emar rcs libraylib.a rcore.o rshapes.o rtextures.o rtext.o rmodels.o utils.o raudio.o`
+   > you can then go to build directory in raylib and test it by running `cmake ..` 
+   > `make`, all examples should work
+   > you MUST build your game file with Async flag ``` emcc -o game.html src/spiral.c -Os -Wall vcpkg/raylib/src/libraylib.a -I./vcpkg/raylib/src -L./vcpkg/raylib/src -s USE_GLFW=3 -s ASYNCIFY --shell-file shell.html -DPLATFORM_WEB```
+   > can then test by running local server `python3 -m http.server 8000`
+   > result: ![image](https://github.com/Haize-uwu/cool/assets/84086558/e9ecd863-d8e2-4b2e-98cd-cdf31003942f)
+
 
 ---
 # Stuff I have actually learnt from this list:
