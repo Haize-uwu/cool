@@ -62,7 +62,7 @@ resources for bunch of stuff I want to learn
 
 # Random
 - [stanford thing](https://dawn.cs.stanford.edu/)
-- [Online virtual machine]()
+- [Online virtual machine](https://bellard.org//jslinux/)
   
 
 
