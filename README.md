@@ -44,6 +44,7 @@ resources for bunch of stuff I want to learn
 
 # Random
 - [stanford thing](https://dawn.cs.stanford.edu/)
+- [Online virtual machine](https://bellard.org//jslinux/)
 
 ---
 # Stuff I have actually learnt from this list:
