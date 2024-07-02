@@ -34,6 +34,7 @@ resources for bunch of stuff I want to learn
 - [raymath](https://www.raylib.com/cheatsheet/raymath_cheatsheet.html)
 - [compile to web](https://github-wiki-see.page/m/raysan5/raylib/wiki/Working-for-Web-(HTML5))
    - How I compiled raylib for web:
+   - **NOTE** you can write c/c++ then using emscripten to compile to wasm.
    > install emsdk from AUR and setup according to the wiki instructions <br/>
    > cloned raylib into my game directory <br/>
    > in raylib/src <br/>
