@@ -64,6 +64,7 @@ resources for bunch of stuff I want to learn
 # Random
 - [stanford thing](https://dawn.cs.stanford.edu/)
 - [Online virtual machine](https://bellard.org//jslinux/)
+- [Gen ascii startup text for dashboards](https://patorjk.com/software/taag/#p=display&v=0&f=Slant&t=NEOVIM)
   
 
 
