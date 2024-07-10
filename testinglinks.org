@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2f99fca1-647c-41b0-b319-45214bb36c53
+:END:
+#+title: Testinglinks
+Checking if images will display on github pages using relative links or system path
+
+image:
+
+
+[[attachment:_20240710_220221screenshot.png]]
