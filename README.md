@@ -1,6 +1,6 @@
 testing commit I bugged it
 checking if org export to html works
-[test it out]()
+[test it out](https://html-preview.github.io/?url=https://github.com/Haize-uwu/cool/blob/main/testinglinks.html)
 # cool
 resources for bunch of stuff I want to learn
 
