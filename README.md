@@ -1,4 +1,6 @@
 testing commit I bugged it
+checking if org export to html works
+[test it out]()
 # cool
 resources for bunch of stuff I want to learn
 
