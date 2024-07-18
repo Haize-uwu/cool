@@ -1,89 +1,137 @@
-/* Text selection */
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+
+body {
+        margin: 40px auto;
+        width: 610px;
+        max-width: 100%;
+        line-height: 1.6;
+        font-size: 16px;
+        background: #2E3440;
+        color: #fffff;
+        padding: 0 10px;
+        font-size: 18px;
+        line-height: 28px;
+        font-family: "Lora";
+        font-weight: 500;
+        /* Smooth the font a little bit, it's a
+         bit too bold on retina screens */
+        -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------- */
+/* Make a nice input form with rounded corners and hover
+ animations*/
+/* --------------------------------------------------- */
+input {
+        padding: 10px 16px;
+        margin: 2px 0;
+        box-sizing: border-box;
+        border: 2px solid #dabebe;
+        border-radius: 6px;
+        background: #fffff4;
+        color: #3a1616;
+        font-size: 16px;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+}
+input:focus {
+        border: 2px solid #3a1616;
+}
+
+/* --------------------------------------- */
+/* The button is very similar to the input */
+/* --------------------------------------- */
+.button {
+        background-color: #fffff4;
+        border: none;
+        color: black;
+        padding: 6px 14px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border: 2px solid #3a1616;
+        border-radius: 6px;
+}
+.button:hover {
+        background-color: #3a1616;
+        color: white;
+}
+
+/* ----------------------------------------------- */
+/* Various classes for messages of different kinds */
+/* ----------------------------------------------- */
+.isa_info,
+.isa_success,
+.isa_warning,
+.isa_error {
+        width: 90%;
+        margin: 10px 0px;
+        padding: 12px;
+}
+.isa_info {
+        color: #00529b;
+        background-color: #bde5f8;
+}
+.isa_success {
+        color: #4f8a10;
+        background-color: #dff2bf;
+}
+.isa_warning {
+        color: #9f6000;
+        background-color: #feefb3;
+}
+.isa_error {
+        color: #d8000c;
+        background-color: #ffd2d2;
+}
+
+h1,
+h2,
+h3 {
+        line-height: 1.2;
+        font-family: "Lora";
+}
+
+img {
+        width: 500px;
+        max-width: 100%;
+        border-radius: 10px;
+        text-align: center;
+}
+
+/* --------------------------------------------- */
+/* Bold hover animations on links and clickables */
+/* --------------------------------------------- */
+a {
+        cursor: pointer;
+        color: #217ab7;
+        line-height: inherit;
+        transition: .14s;
+}
+a:hover {
+        color: white;
+        background-color: #3297d3;
+}
+a:visited {
+        color: #43458b;
+        border-color: #43458b;
+}
+a:visited:hover {
+        color: white;
+        background-color: #9251ac;
+}
+
+pre {
+        font-family: "Inconsolata", monospace;
+}
+
 ::selection {
-  background: var(--color-selection);
-}
-
-/* Root variables for flex layouts */
-:root {
-  --flex-one: calc(100% - var(--gallery-gap));
-  --flex-two: calc(100% / 2 - var(--gallery-gap));
-  --flex-three: calc(100% / 3 - var(--gallery-gap));
-  --flex-four: calc(100% / 4 - var(--gallery-gap));
-  --flex-five: calc(100% / 5 - var(--gallery-gap));
-}
-
-/* Root variables for fonts, sizes, and colors */
-:root {
-  --font-main: 'Lora', 'Lora Serif', serif;
-  --font-main-alt: 'EB Garamond', serif;
-  --font-code: 'Fantasque Sans Mono', monospace;
-  --paragraph-size: 1.42rem;
-  --paragraph-size-mobile: 1.24rem;
-  --paragraph-width: 40rem;
-  --paragraph-width-max: 100%;
-  --paragraph-line-height: 1.95rem;
-  --paragraph-line-height-mobile: 1.9rem;
-  --paragraph-font-weight: 500;
-  --paragraph-font-bold-weight: 700;
-  --paragraph-text-rendering: antialiased;
-  --code-size: 1.1rem;
-  --code-text-rendering: optimizeSpeed;
-  --code-line-height: 1.37rem;
-  --header-width: 50rem;
-  --header-width-max: 100%;
-  --header-font-weight: 500;
-  --header-text-rendering: antialiased;
-  --subtitle-size: 1.3rem;
-  --quote-size: 1.3rem;
-  --quote-size-mobile: 1.1rem;
-  --quote-line-height: 1.9rem;
-  --quote-line-height-mobile: 1.4rem;
-  --quote-width: 34.375rem;
-  --toc-size: var(--quote-size);
-  --toc-line-height: 1.3rem;
-  --toc-width: var(--paragraph-width);
-  --media-width: 55.125rem;
-  --code-width: 44rem;
-  --gallery-gap: 1px;
-  --gallery-width: calc(100% - var(--gallery-gap));
-  --gallery-zoom: 1.069;
-  --table-size: 1.2rem;
-  --details-size: 1.15rem;
-  --footnote-size: 1rem;
-  --math-size: 1.37rem;
-  --list-margin-left: 2rem;
-  --section-one-font-size: 3.7rem;
-  --section-two-font-size: 2.2rem;
-  --section-three-font-size: 1.7rem;
-  --section-four-font-size: 1.4rem;
-  --section-five-font-size: 1.3rem;
-  --section-six-font-size: 1.2rem;
-  --color-text: #3a1616;
-  --color-link-text: var(--color-text);
-  --color-title: black;
-  --color-header: #c31585;
-  --color-header-hover: #a53221;
-  --color-bg: #fbebef;
-  --color-white: #fff;
-  --color-selection: #ff7ab15c;
-  --color-link: #ff50a2;
-  --color-link-visited: #5e416d;
-  --color-subtitle: #7a2518;
-  --code-bg: #fff7f7;
-  --color-tomb: #ba3925;
-  --color-divider: #d7bbbb;
-  --color-snow: #4f86f7;
-  --in-text-media-width: 37rem;
-}
-
-/* Smooth scrolling behavior for HTML */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Box-sizing for all elements */
-*, ::before, ::after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+        color: white;
+        background: #ff4081;
 }
