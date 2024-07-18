@@ -1,0 +1,89 @@
+/* Text selection */
+::selection {
+  background: var(--color-selection);
+}
+
+/* Root variables for flex layouts */
+:root {
+  --flex-one: calc(100% - var(--gallery-gap));
+  --flex-two: calc(100% / 2 - var(--gallery-gap));
+  --flex-three: calc(100% / 3 - var(--gallery-gap));
+  --flex-four: calc(100% / 4 - var(--gallery-gap));
+  --flex-five: calc(100% / 5 - var(--gallery-gap));
+}
+
+/* Root variables for fonts, sizes, and colors */
+:root {
+  --font-main: 'Lora', 'Lora Serif', serif;
+  --font-main-alt: 'EB Garamond', serif;
+  --font-code: 'Fantasque Sans Mono', monospace;
+  --paragraph-size: 1.42rem;
+  --paragraph-size-mobile: 1.24rem;
+  --paragraph-width: 40rem;
+  --paragraph-width-max: 100%;
+  --paragraph-line-height: 1.95rem;
+  --paragraph-line-height-mobile: 1.9rem;
+  --paragraph-font-weight: 500;
+  --paragraph-font-bold-weight: 700;
+  --paragraph-text-rendering: antialiased;
+  --code-size: 1.1rem;
+  --code-text-rendering: optimizeSpeed;
+  --code-line-height: 1.37rem;
+  --header-width: 50rem;
+  --header-width-max: 100%;
+  --header-font-weight: 500;
+  --header-text-rendering: antialiased;
+  --subtitle-size: 1.3rem;
+  --quote-size: 1.3rem;
+  --quote-size-mobile: 1.1rem;
+  --quote-line-height: 1.9rem;
+  --quote-line-height-mobile: 1.4rem;
+  --quote-width: 34.375rem;
+  --toc-size: var(--quote-size);
+  --toc-line-height: 1.3rem;
+  --toc-width: var(--paragraph-width);
+  --media-width: 55.125rem;
+  --code-width: 44rem;
+  --gallery-gap: 1px;
+  --gallery-width: calc(100% - var(--gallery-gap));
+  --gallery-zoom: 1.069;
+  --table-size: 1.2rem;
+  --details-size: 1.15rem;
+  --footnote-size: 1rem;
+  --math-size: 1.37rem;
+  --list-margin-left: 2rem;
+  --section-one-font-size: 3.7rem;
+  --section-two-font-size: 2.2rem;
+  --section-three-font-size: 1.7rem;
+  --section-four-font-size: 1.4rem;
+  --section-five-font-size: 1.3rem;
+  --section-six-font-size: 1.2rem;
+  --color-text: #3a1616;
+  --color-link-text: var(--color-text);
+  --color-title: black;
+  --color-header: #c31585;
+  --color-header-hover: #a53221;
+  --color-bg: #fbebef;
+  --color-white: #fff;
+  --color-selection: #ff7ab15c;
+  --color-link: #ff50a2;
+  --color-link-visited: #5e416d;
+  --color-subtitle: #7a2518;
+  --code-bg: #fff7f7;
+  --color-tomb: #ba3925;
+  --color-divider: #d7bbbb;
+  --color-snow: #4f86f7;
+  --in-text-media-width: 37rem;
+}
+
+/* Smooth scrolling behavior for HTML */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Box-sizing for all elements */
+*, ::before, ::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
