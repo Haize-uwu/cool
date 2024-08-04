@@ -4,6 +4,8 @@ checking if org export to html works
 # cool
 resources for bunch of stuff I want to learn
 
+# IMPORTANT
+- [dive into deep learning book](https://www.d2l.ai/)
 # Emacs
 - [setting up emacs for IDE experience](https://github.com/rememberYou/.emacs.d/blob/master/config.org#cmake)
 - [research workflow](https://emacsconf.org/2021/talks/research/)
