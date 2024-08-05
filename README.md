@@ -6,6 +6,7 @@ resources for bunch of stuff I want to learn
 
 # IMPORTANT
 - [dive into deep learning book](https://www.d2l.ai/)
+- [LEAN](https://leanprover-community.github.io/learn.html)
 # Emacs
 - [setting up emacs for IDE experience](https://github.com/rememberYou/.emacs.d/blob/master/config.org#cmake)
 - [research workflow](https://emacsconf.org/2021/talks/research/)
