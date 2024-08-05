@@ -110,7 +110,7 @@ img {
 /* --------------------------------------------- */
 a {
         cursor: pointer;
-        color: #217ab7;
+        color: #B4F9F8;
         line-height: inherit;
         transition: .14s;
 }
@@ -119,12 +119,12 @@ a:hover {
         background-color: #3297d3;
 }
 a:visited {
-        color: #43458b;
+        color: #B18C59;
         border-color: #43458b;
 }
 a:visited:hover {
         color: white;
-        background-color: #9251ac;
+        background-color: #ff4081;
 }
 
 pre {
