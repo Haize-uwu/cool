@@ -4,7 +4,7 @@ checking if org export to html works
 # cool
 resources for bunch of stuff I want to learn
 # Some class notes
-
+- [Logic](/Class_notes/index.html)
 
 # IMPORTANT
 - [dive into deep learning book](https://www.d2l.ai/)
