@@ -1,0 +1,9 @@
+#+html_head: <link rel="stylesheet" href="https://haize-uwu.github.io/cool/style.css">
+#+author: haize
+#+title: Index page for notes
+
+* Logic
+ * [[file:Logic/1logi.pdf][Chapter 1]]
+ * [[file:Logic/Chapter2.pdf][Chapter 2]]
+* Computer vision
+
