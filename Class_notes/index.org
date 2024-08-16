@@ -1,6 +1,8 @@
 #+html_head: <link rel="stylesheet" href="https://haize-uwu.github.io/cool/style.css">
 #+author: haize
 #+title: Index page for notes
+#+DATE: %(format-time-string "%Y-%m-%d %a %H:%M")
+#+TOC:nil
 
 * Logic
  * [[file:Logic/1logi.pdf][Chapter 1]]
