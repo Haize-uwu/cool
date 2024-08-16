@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-07-29 Mon 19:47 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>1logic</title>
+<meta name="author" content="haize" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" href="https://haize-uwu.github.io/cool/style.css">
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="./"> HOME </a>
+</div><div id="content" class="content">
+<h1 class="title">1logic</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org47494f0">1. Propositional Logic</a>
+<ul>
+<li><a href="#orgf7298aa">1.1. Logical Constants</a></li>
+<li><a href="#org0c173cd">1.2. Variables</a></li>
+<li><a href="#orgfe35945">1.3. Construction Trees</a></li>
+<li><a href="#orgf2a9489">1.4. Parsing Trees</a></li>
+<li><a href="#org884a364">1.5. Truth Tables</a></li>
+<li><a href="#org6500d60">1.6. Tautologies</a>
+<ul>
+<li><a href="#org487889b">1.6.1. Notation</a></li>
+</ul>
+</li>
+<li><a href="#orgc710749">1.7. Contradictions</a></li>
+<li><a href="#org46c81f4">1.8. Propositional Logical Consequence</a>
+<ul>
+<li><a href="#org9c98f5a">1.8.1. Consiquence is reducible to validity</a></li>
+</ul>
+</li>
+<li><a href="#org611f349">1.9. Sound Rules of propositional inference</a></li>
+<li><a href="#org348a937">1.10. How to check correctness</a></li>
+<li><a href="#org743b55e">1.11. Fallacies of Implication (Derivative Implication)</a></li>
+<li><a href="#org87a33e1">1.12. Truth assignments in propostional logical</a></li>
+<li><a href="#orge88143c">1.13. Logical Equivalence</a>
+<ul>
+<li><a href="#org6b1199a">1.13.1. De&rsquo; Morgans Law</a></li>
+<li><a href="#orgb2d6ddd">1.13.2. this one</a></li>
+</ul>
+</li>
+<li><a href="#org1cb828b">1.14. Relating Logical Equivalence, consequence and validity</a></li>
+<li><a href="#org9c6fa39">1.15. &equiv; is an equivalence relation</a></li>
+<li><a href="#orgd9cc8d2">1.16. &equiv; is a congruence wrt to logical connectives</a>
+<ul>
+<li><a href="#org03ebd48">1.16.1. Important Logical Equivalence</a></li>
+</ul>
+</li>
+<li><a href="#org8801008">1.17. Inductive Definitions</a>
+<ul>
+<li><a href="#org34a249f">1.17.1. Structured induction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org47494f0" class="outline-2">
+<h2 id="org47494f0"><span class="section-number-2">1.</span> Propositional Logic</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+\(A \implies B\)
+This evalutes true if A is <span class="underline">false</span> <b>OR</b> B is <span class="underline">true</span>
+</p>
+</div>
+<div id="outline-container-orgf7298aa" class="outline-3">
+<h3 id="orgf7298aa"><span class="section-number-3">1.1.</span> Logical Constants</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+\(\top\): True propostion
+</p>
+
+<p>
+\(\bot\): False propstion
+</p>
+</div>
+</div>
+<div id="outline-container-org0c173cd" class="outline-3">
+<h3 id="org0c173cd"><span class="section-number-3">1.2.</span> Variables</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>p, q, r : lower case roman letters.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfe35945" class="outline-3">
+<h3 id="orgfe35945"><span class="section-number-3">1.3.</span> Construction Trees</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Taking any subtree is a valid logical formulae itself</li>
+<li>the size of the graph is the number of nodes (variables + connectives)</li>
+<li>The main connective is the one applied last, non-leaf node</li>
+<li>create the tree from the inside</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf2a9489" class="outline-3">
+<h3 id="orgf2a9489"><span class="section-number-3">1.4.</span> Parsing Trees</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Start constructing these from the main connective</li>
+<li>Top to bottom</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org884a364" class="outline-3">
+<h3 id="org884a364"><span class="section-number-3">1.5.</span> Truth Tables</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>ternary function mapping \(\{0,1\} \rightarrow \{0,1\}\)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6500d60" class="outline-3">
+<h3 id="org6500d60"><span class="section-number-3">1.6.</span> Tautologies</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>propositionnaly valid formula that is always True.</li>
+</ul>
+</div>
+<div id="outline-container-org487889b" class="outline-4">
+<h4 id="org487889b"><span class="section-number-4">1.6.1.</span> Notation</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<ul class="org-ul">
+<li>\(\models A\)</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgebfe744"></a>Examples<br />
+<div class="outline-text-5" id="text-1-6-1-1">
+<ul class="org-ul">
+<li>\(\models\) p &or; &not; p - Law of excluded middle</li>
+<li>\(\models\) &not;(p &and; &not; p) - Law of non-contradiction</li>
+<li>\(\models\) ((p &and;(p \(\implies\) q))\(\implies\) q) - modus ponents
+<ul class="org-ul">
+<li>Set q false, left must be true so all true.</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc710749" class="outline-3">
+<h3 id="orgc710749"><span class="section-number-3">1.7.</span> Contradictions</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>always false formula</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org9e29f2a"></a>If a formula is not a contradiction, then it is satisfiable<br /></li>
+</ol>
+</div>
+<div id="outline-container-org46c81f4" class="outline-3">
+<h3 id="org46c81f4"><span class="section-number-3">1.8.</span> Propositional Logical Consequence</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+\[A_1 , A_2 ,..., A_n \models C\]
+</p>
+<ul class="org-ul">
+<li>if C is true whenever all \(A_i\) are true.</li>
+<li><b>Tautology</b> is a special case of consequence</li>
+</ul>
+<p>
+\[ \phi \models C = \models C\]
+</p>
+</div>
+<div id="outline-container-org9c98f5a" class="outline-4">
+<h4 id="org9c98f5a"><span class="section-number-4">1.8.1.</span> Consiquence is reducible to validity</h4>
+<div class="outline-text-4" id="text-1-8-1">
+<p>
+\[A_1 , ... , A_n \models B \] is equivalent to: \(A_1 \land ... \land A_n \models B\)  <br />
+then \[\models (A_1 \land ... \land A_n) \implies B\]
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org611f349" class="outline-3">
+<h3 id="org611f349"><span class="section-number-3">1.9.</span> Sound Rules of propositional inference</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li>A rule of propositional inference is a scheme where \(P_i\) are the premises we assume and \(C\) is the conclusion \[\frac{P_1 , ..., P_n}{C}\]</li>
+<li>An inference rule is <b>logically sound</b> if \[P_1 , ..., P_n \models C\]</li>
+<li>Putting concrete propostions (substituting for variables) is a propositional inference.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org348a937" class="outline-3">
+<h3 id="org348a937"><span class="section-number-3">1.10.</span> How to check correctness</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+Check if a rule is sound : \[\frac{S, S \implies h}{h}\] so check if \(S, S \implies h \overset{?}{\models} h\) <br />
+&there4; the inference is correct based on a sound rule, but can&rsquo;t say rules is sound
+</p>
+</div>
+</div>
+<div id="outline-container-org743b55e" class="outline-3">
+<h3 id="org743b55e"><span class="section-number-3">1.11.</span> Fallacies of Implication (Derivative Implication)</h3>
+<div class="outline-text-3" id="text-1-11">
+<ul class="org-ul">
+<li>converse: \(B \implies A\)</li>
+<li>inverse: &not; A \(\implies\) &not; B</li>
+<li>contrapositve: &not; B \(\implies\) &not; A this is <b>sound</b>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org87a33e1" class="outline-3">
+<h3 id="org87a33e1"><span class="section-number-3">1.12.</span> Truth assignments in propostional logical</h3>
+<div class="outline-text-3" id="text-1-12">
+<ul class="org-ul">
+<li>PVAR : propostional variables (countably infinite)</li>
+<li>FOR : set of all propositional formulas</li>
+</ul>
+
+<p>
+A truth assignment is  a map \\ v : PVAR &rarr; {T, F} and <br />
+\(\bar{v}\):FORM &rarr;{T,F}
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org625b58a"></a>Note the following:<br />
+<div class="outline-text-5" id="text-1-12-0-1">
+<ul class="org-ul">
+<li>\(\bar{v}(\top)\) = T</li>
+<li>\(\bar{v}(\bot)\) = F</li>
+<li>\(\bar{v}(p)\) = v(p)</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orge88143c" class="outline-3">
+<h3 id="orge88143c"><span class="section-number-3">1.13.</span> Logical Equivalence</h3>
+<div class="outline-text-3" id="text-1-13">
+<p>
+A &equiv; B both obtain the same truth value under all truth valuations <br />
+\[A \equiv B \iff \bar{v}(A) = \bar{v}(B)\] for all truth assignments if v
+</p>
+</div>
+<div id="outline-container-org6b1199a" class="outline-4">
+<h4 id="org6b1199a"><span class="section-number-4">1.13.1.</span> De&rsquo; Morgans Law</h4>
+<div class="outline-text-4" id="text-1-13-1">
+<p>
+&not;(p&and; q) &equiv; &not; p &or; &not; q
+</p>
+</div>
+</div>
+<div id="outline-container-orgb2d6ddd" class="outline-4">
+<h4 id="orgb2d6ddd"><span class="section-number-4">1.13.2.</span> this one</h4>
+<div class="outline-text-4" id="text-1-13-2">
+<p>
+p &and; (p &or; q) &equiv; p &and; p &equiv; p\
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1cb828b" class="outline-3">
+<h3 id="org1cb828b"><span class="section-number-3">1.14.</span> Relating Logical Equivalence, consequence and validity</h3>
+<div class="outline-text-3" id="text-1-14">
+</div>
+<ol class="org-ol">
+<li><a id="org5a10f48"></a>Reducible to validity<br />
+<div class="outline-text-5" id="text-1-14-0-1">
+<p>
+\[A \equiv B\  iff \models A \iff B \]
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org89ed630"></a>Proof in notes<br />
+<div class="outline-text-6" id="text-1-14-0-1-1">
+<p>
+Suppose A &equiv; B <br />
+Let v:PVAR&rarr; {T,F} be arbitrary <br />
+since A &equiv; B, \(\bar{v}\)(A) = \(\bar{v}\)(B) <br />
+&there4; \(\bar{v}\)(A \(\iff\) B) = T <br />
+Since v was arbitrary we conclude <br />
+\(\models\) A \(\iff\) B
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgc9fa74c"></a>Reducible to Logical Consequence<br />
+<div class="outline-text-5" id="text-1-14-0-2">
+<p>
+A &equiv; B iff both A \(\models\) B and \(B \models A\)
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org9c6fa39" class="outline-3">
+<h3 id="org9c6fa39"><span class="section-number-3">1.15.</span> &equiv; is an equivalence relation</h3>
+<div class="outline-text-3" id="text-1-15">
+<ol class="org-ol">
+<li>reflexive A&equiv; A</li>
+<li>symmetric if A&equiv; B then B &equiv; A</li>
+<li>transitive if A &equiv; B and B &equiv; C then A &equiv; C</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgd9cc8d2" class="outline-3">
+<h3 id="orgd9cc8d2"><span class="section-number-3">1.16.</span> &equiv; is a congruence wrt to logical connectives</h3>
+<div class="outline-text-3" id="text-1-16">
+<ul class="org-ul">
+<li>if A &equiv; B then &not; A &equiv; &not; B <br /></li>
+<li>if \(A_1 \equiv B_1\) and \(A_2 \equiv B_2\) then (A<sub>1</sub> &sdot; A<sub>2</sub> ) &equiv; (B<sub>1</sub> &sdot; B<sub>2</sub>) for all &sdot; = {&or;, &and;, \(\implies\), \(\iff\)}</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org10d9c04"></a>Theorem Equivalent replacement<br />
+<div class="outline-text-7" id="text-1-16-0-0-0-1">
+<p>
+if A &equiv; B then C(A/p) &equiv; C(B/p) 
+<br />
+We replace p with A all at once, the same for B
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orga416d91"></a>Proof in notes &rarr; by induction on C<br />
+<div class="outline-text-8" id="text-1-16-0-0-0-1-1">
+<p>
+By Induction on C: 
+</p>
+<ol class="org-ol">
+<li>\(C\) is \(\bot\) Then  \(C(A/p)\) = \(\bot\) and C(B/p) = \(\bot\) <br /></li>
+</ol>
+<p>
+&there4;  \(C(A/p) = \bot \equiv \bot = C(B/p)\)
+</p>
+<ol class="org-ol">
+<li>\(C\) is \(\top\) same as above.</li>
+<li>1. \(C\)  is \(q\) where \(q \neq  p\), then \(C(A/p) = q\) and \(C(B/p) = q\) <br /></li>
+</ol>
+<p>
+SO \(C(A/p) = q \equiv q = C(B/p)\)
+</p>
+<ol class="org-ol">
+<li>2. \(C\) is \(p\) , then <br /></li>
+</ol>
+<p>
+\(C(A/p) = A \equiv B = C(B/p)\) <br />
+Inductive Hypothesis:  Suppose holds for formulas \(C_1\) and \(C_2\) <br />
+\(C_1 (A/p) \equiv C_1 (B/p)\) and <br />
+\(C_2(A/p) \equiv C_2(B/p)\) 
+</p>
+<ol class="org-ol">
+<li>C  is &not; C : <br /></li>
+</ol>
+<p>
+Then \(C(A/p) = \not C(A/p) \overset{\star}{\equiv} \not C(B/p) =C(B/p)\), <br />
+Where * holds by the Inductive Hypothesis and the fact that &equiv; is a congruence wrt to propositional connectives. 
+</p>
+<ol class="org-ol">
+<li>\(C\) is \((C_1 \cdot C_2)\) for some \(\cdot = \{\land \lor \implies \iff \}\) <br /></li>
+</ol>
+<p>
+Then \(C(A/p) = (C_1(A/p) \cdot C_2(A/p))\) but by inductive hypothesis <br />
+\(C_1 (A/p) \equiv C_1 (B/p)\) and <br />
+\(C_2(A/p) \equiv C_2(B/p)\)  <br />
+So by the fact that &equiv; us a congruence wrt to propositional connectives; <br />
+\(C(A/p) = ((C_1(A/p) \cdot C_2(A/p))\equiv(C(A/p) = (C_1(B/p) \cdot C_2(B/p))=C(B/p)\) <br />
+&there4; C(A/p) &equiv; C(B/p)
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<div id="outline-container-org03ebd48" class="outline-4">
+<h4 id="org03ebd48"><span class="section-number-4">1.16.1.</span> Important Logical Equivalence</h4>
+<div class="outline-text-4" id="text-1-16-1">
+<ul class="org-ul">
+<li>Idempotency : applying more than once makes no difference p&and; p and p&or; p</li>
+<li>Commutativity:</li>
+<li>Associativity:</li>
+<li>Distributivity:</li>
+<li>BUNCH OF STUFF AT THE END OF SECTION 1.3</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org55a3b79"></a>Know important &equiv; for negation how it affects \(\implies\) and \(\iff\)<br /></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org8801008" class="outline-3">
+<h3 id="org8801008"><span class="section-number-3">1.17.</span> Inductive Definitions</h3>
+<div class="outline-text-3" id="text-1-17">
+</div>
+<div id="outline-container-org34a249f" class="outline-4">
+<h4 id="org34a249f"><span class="section-number-4">1.17.1.</span> Structured induction</h4>
+<div class="outline-text-4" id="text-1-17-1">
+<p>
+Important when an infinite set of structured objects are to be defined 
+<br />
+BNF <br />
+\[w:= \epsilon | wa\],  where \(a\in A\)
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orga661b97"></a>Example proof The number of right parenthesis is the same as left in logical formalae&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ATTACH">ATTACH</span></span><br />
+<div class="outline-text-6" id="text-1-17-1-0-1">
+<p>
+<br />
+</p>
+
+<p>
+<i>l</i> : \(\mathbf{FOR} \rightarrow \mathbb{N}\) <br />
+<i>r</i> : \(\mathbf{FOR} \rightarrow \mathbb{N}\) <br />
+To prove /l/(&psi;)= /r/(&psi;) &forall;&psi; &isin; \(\mathbf{FORM}\)
+<br />
+<br />
+</p>
+<ol class="org-ol">
+<li>if &psi; is \(\top\), then <i>l</i> (&psi;) = <i>l</i> (\(\top\)) = 0 = <i>r</i> (\(\top\)) = <i>r</i> (&psi;) <br />
+if &psi; is \(\bot\), then <i>l</i> (&psi;) = <i>l</i> (\(\bot\)) = 0 = <i>r</i> (\(\bot\)) = <i>r</i> (&psi;)</li>
+<li>if &psi; is \(p\) then <i>l</i> (&psi;) = <i>l</i> (p) = 0 = <i>r</i> (p) = <i>r</i> (\&psi;)</li>
+<li>Suppose <i>l</i> (A) = <i>r</i> (A) and A is &not; A: <br /></li>
+</ol>
+<p>
+then <i>l</i> (&psi;) = <i>l</i> (&not; A) = <i>l</i> (A) =/r/ (A) = <i>r</i> (&not; A) = <i>r</i> (&psi;)
+</p>
+<ol class="org-ol">
+<li>Suppose <i>l/(A)  = /r</i> (A) and <i>l</i> (B) = <i>r</i> (B) and &psi; is (A &sdot; B), for &sdot; = {&and;, &or;, \(\implies\), \(\iff\)} <br /></li>
+</ol>
+<p>
+Then <i>l</i> (&psi;) = <i>l</i> ((A &sdot; B) = <i>l</i> (A) + <i>l</i> (B) + 1 <br />
+Now by IH = <i>r</i> (A) + <i>r</i> (B) +1 = <i>r</i> ((A &sdot; B)) = <i>r</i> (&psi;)
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

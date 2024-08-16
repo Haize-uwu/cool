@@ -1,0 +1,170 @@
+
+#+html_head: <link rel="stylesheet" href="https://haize-uwu.github.io/cool/style.css">
+#+title: 1logic
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{amssymb}
+#+LATEX_HEADER: \usepackage{bussproofs}
+* Propositional Logic
+$A \implies B$
+This evalutes true if A is _false_ *OR* B is _true_
+** Logical Constants
+$\top$: True propostion
+
+$\bot$: False propstion
+** Variables
+ * p, q, r : lower case roman letters.
+** Construction Trees
+ * Taking any subtree is a valid logical formulae itself
+ * the size of the graph is the number of nodes (variables + connectives)
+ * The main connective is the one applied last, non-leaf node 
+ * create the tree from the inside 
+** Parsing Trees
+ * Start constructing these from the main connective
+ * Top to bottom
+** Truth Tables
+ * ternary function mapping $\{0,1\} \rightarrow \{0,1\}$
+** Tautologies
+ * propositionnaly valid formula that is always True.
+*** Notation 
+ * $\models A$ 
+**** Examples
+ * $\models$ p \lor \not p - Law of excluded middle
+ * $\models$ \not(p \land \not p) - Law of non-contradiction
+ * $\models$ ((p \land(p $\implies$ q))$\implies$ q) - modus ponents
+   * Set q false, left must be true so all true.
+** Contradictions
+ * always false formula 
+
+****** If a formula is not a contradiction, then it is satisfiable
+** Propositional Logical Consequence
+$$A_1 , A_2 ,..., A_n \models C$$
+ * if C is true whenever all $A_i$ are true.
+ * *Tautology* is a special case of consequence 
+$$ \phi \models C = \models C$$
+*** Consiquence is reducible to validity
+$$A_1 , ... , A_n \models B $$ is equivalent to: $A_1 \land ... \land A_n \models B$  \\
+then $$\models (A_1 \land ... \land A_n) \implies B$$
+** Sound Rules of propositional inference
+ * A rule of propositional inference is a scheme where $P_i$ are the premises we assume and $C$ is the conclusion $$\frac{P_1 , ..., P_n}{C}$$
+ * An inference rule is *logically sound* if $$P_1 , ..., P_n \models C$$
+ * Putting concrete propostions (substituting for variables) is a propositional inference.
+** How to check correctness
+Check if a rule is sound : $$\frac{S, S \implies h}{h}$$ so check if $S, S \implies h \overset{?}{\models} h$ \\
+\therefore the inference is correct based on a sound rule, but can't say rules is sound
+** Fallacies of Implication (Derivative Implication)
+ * converse: $B \implies A$
+ * inverse: \not A $\implies$ \not B
+ * contrapositve: \not B $\implies$ \not A this is *sound*.
+** Truth assignments in propostional logical
+ * PVAR : propostional variables (countably infinite)
+ * FOR : set of all propositional formulas 
+ 
+A truth assignment is  a map \\ v : PVAR \rightarrow {T, F} and \\ 
+$\bar{v}$:FORM \rightarrow{}{T,F}
+
+**** Note the following:
+ * $\bar{v}(\top)$ = T
+ * $\bar{v}(\bot)$ = F
+ * $\bar{v}(p)$ = v(p)
+#+begin_src latex
+ * $\bar{v}$(\not A) = $$\case{T , $\bar{v}$(A) = F}$$
+
+#+end_src
+
+** Logical Equivalence
+A \equiv B both obtain the same truth value under all truth valuations \\
+$$A \equiv B \iff \bar{v}(A) = \bar{v}(B)$$ for all truth assignments if v
+*** De' Morgans Law
+\not(p\land q) \equiv \not p \lor \not q
+
+*** this one
+p \land (p \lor q) \equiv p \land p \equiv p\
+
+** Relating Logical Equivalence, consequence and validity
+**** Reducible to validity
+$$A \equiv B\  iff \models A \iff B $$
+***** Proof in notes
+Suppose A \equiv B \\
+Let v:PVAR\rightarrow{} {T,F} be arbitrary \\
+since A \equiv B, $\bar{v}$(A) = $\bar{v}$(B) \\
+\therefore $\bar{v}$(A $\iff$ B) = T \\
+Since v was arbitrary we conclude \\
+$\models$ A $\iff$ B
+**** Reducible to Logical Consequence
+A \equiv B iff both A $\models$ B and $B \models A$
+
+** \equiv is an equivalence relation
+1. reflexive A\equiv A
+2. symmetric if A\equiv B then B \equiv A
+3. transitive if A \equiv B and B \equiv C then A \equiv C
+
+** \equiv is a congruence wrt to logical connectives 
+ * if A \equiv B then \not A \equiv \not B \\
+ * if $A_1 \equiv B_1$ and $A_2 \equiv B_2$ then (A_1 \cdot A_2 ) \equiv (B_1 \cdot B_2) for all \cdot = {\lor, \land, $\implies$, $\iff$}
+****** Theorem Equivalent replacement
+if A \equiv B then C(A/p) \equiv C(B/p) 
+\\
+We replace p with A all at once, the same for B
+******* Proof in notes \rightarrow by induction on C
+By Induction on C: 
+1. $C$ is $\bot$ Then  $C(A/p)$ = $\bot$ and C(B/p) = $\bot$ \\
+\therefore  $C(A/p) = \bot \equiv \bot = C(B/p)$
+2. $C$ is $\top$ same as above.
+3. 1. $C$  is $q$ where $q \neq  p$, then $C(A/p) = q$ and $C(B/p) = q$ \\
+SO $C(A/p) = q \equiv q = C(B/p)$
+3. 2. $C$ is $p$ , then \\
+$C(A/p) = A \equiv B = C(B/p)$ \\
+Inductive Hypothesis:  Suppose holds for formulas $C_1$ and $C_2$ \\
+$C_1 (A/p) \equiv C_1 (B/p)$ and \\
+$C_2(A/p) \equiv C_2(B/p)$ 
+4. C  is \not C : \\
+Then $C(A/p) = \not C(A/p) \overset{\star}{\equiv} \not C(B/p) =C(B/p)$, \\
+Where \star holds by the Inductive Hypothesis and the fact that \equiv is a congruence wrt to propositional connectives. 
+5. $C$ is $(C_1 \cdot C_2)$ for some $\cdot = \{\land \lor \implies \iff \}$ \\
+Then $C(A/p) = (C_1(A/p) \cdot C_2(A/p))$ but by inductive hypothesis \\
+$C_1 (A/p) \equiv C_1 (B/p)$ and \\
+$C_2(A/p) \equiv C_2(B/p)$  \\
+So by the fact that \equiv us a congruence wrt to propositional connectives; \\
+$C(A/p) = ((C_1(A/p) \cdot C_2(A/p))\equiv(C(A/p) = (C_1(B/p) \cdot C_2(B/p))=C(B/p)$ \\
+\therefore C(A/p) \equiv C(B/p)
+
+*** Important Logical Equivalence
+ * Idempotency : applying more than once makes no difference p\land p and p\lor p
+ * Commutativity: 
+ * Associativity:
+ * Distributivity:
+ * BUNCH OF STUFF AT THE END OF SECTION 1.3
+**** Know important \equiv for negation how it affects $\implies$ and $\iff$
+
+** Inductive Definitions
+*** Structured induction
+Important when an infinite set of structured objects are to be defined 
+\\
+BNF \\
+$$w:= \epsilon | wa$$,  where $a\in A$
+***** Example proof The number of right parenthesis is the same as left in logical formalae :ATTACH:
+:PROPERTIES:
+:ID:       1dcecf4c-c8eb-4752-a6cf-31e462019e11
+:END:
+\\
+
+/l/ : $\mathbf{FOR} \rightarrow \mathbb{N}$ \\
+/r/ : $\mathbf{FOR} \rightarrow \mathbb{N}$ \\
+To prove /l/(\psi)= /r/(\psi) \forall\psi \in $\mathbf{FORM}$
+\\
+\\
+1. if \psi is $\top$, then /l/ (\psi) = /l/ ($\top$) = 0 = /r/ ($\top$) = /r/ (\psi) \\
+ if \psi is $\bot$, then /l/ (\psi) = /l/ ($\bot$) = 0 = /r/ ($\bot$) = /r/ (\psi) 
+2. if \psi is $p$ then /l/ (\psi) = /l/ (p) = 0 = /r/ (p) = /r/ (\\psi)
+3. Suppose /l/ (A) = /r/ (A) and A is \not A: \\
+then /l/ (\psi) = /l/ (\not A) = /l/ (A) =/r/ (A) = /r/ (\not A) = /r/ (\psi)
+4. Suppose /l/(A)  = /r/ (A) and /l/ (B) = /r/ (B) and \psi is (A \cdot B), for \cdot = {\land, \lor, $\implies$, $\iff$} \\
+Then /l/ (\psi) = /l/ ((A \cdot B) = /l/ (A) + /l/ (B) + 1 \\
+Now by IH = /r/ (A) + /r/ (B) +1 = /r/ ((A \cdot B)) = /r/ (\psi)
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+#+html_head: <link rel="stylesheet" href="https://haize-uwu.github.io/cool/style.css">
+#+title: Deductive Reasoning in Propositional Logic
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{amssymb}
+#+LATEX_HEADER: \usepackage{bussproofs}
+#+PROPERTY: header-args :scale 1.0
+
+* Deductive Systems
+
+****** Logical Consequence:
+\[ A_1 , ..., A_n \models C
+\]
+ * and Logical validity: 
+\[ \models C\]
+These are semantic notions \rightarrow meaning of formulae. \\
+They require checking truth in all models for logic.
+****** Deductive systems:
+ * Are meant to capture the logical consequence and validity defined by the logical semantics, in terms of logical **logical deductions (derivations)**.
+ * A Logical derivation is a mechanical procedure, not reffering the meaning of the occuring formulae.
+ * In deductive systems logical consequence is replaced by **deductive consequence** and valid formulae (tautologies) - by derivable formulae (theorems).
+** Basic Components of a deductive System
+ * Formal Logical language
+ * Axioms (Rules of inference)
+ * Inference (deduction) from a set of assumptions in a given deductive System $D$: 
+\[A_1, ... A_n \vdash_D C\]
+ * Formulae derivable from no assumptions are called **Theorems** of $D$:
+\[\vdash_D C\]
+** Soundness and completeness of a deductive system
+ * A deductive system $D$ is *sound* (correct) for a given logical semantics if $D$ can **only** derive what is logically correct (valid): 
+\[A_1,...A_n \vdash_D C \implies A_1, ... A_n \models C\]
+  * In particular:
+\[\vdash_D C \implies \models C\]
+
+ * A system $D$ is *Complete* for a given logical semantics if $D$ can derive *every* valid logical consequence:
+\[ A_1, ... A_n \models C \implies\ A_1,...A_n \vdashD C\]
+   * In particular
+\[\models C \implies \vdash_D C \]
+ * A deductive system is *adequte for a given semantics if it is both sounnd AND complete:
+\[ A_1, ... A_n \models C \iff \ A_1,...A_n \vdash_D C\]
+ * in particular \[\models C \iff \vdash_D C \]
+
+
+** Propositional natural deduction 
+ * Natural Deduction (ND): System for structural logic derivation from a set of assumptions, based on rules, specific to the logical connectives.
+ * There are Introduction and elimination rules for each connective.
+ * Intro and cancelation of assumptions, assumptions can be reused many times  before being discharged.
+ * Cancelation of assumptions: only when a rule allows it, not an obligation.
+ * All assumptions left at the end of a derivation must be declared.
+*** NOTE:
+The fewer assumptions, the stronger the claim of the derivation.
+*** Rules for propositional connectives
+ 
+ * Refer to notes!
+***** Examples in notes!
+**** Strategies for ND proofs in propositional logic
+Given a set of premises \Delta and the goal of trying to prove \Gamma:
+1. Apply premises $p_i \in \Delta$ to prove \Gamma
+2. If you need to use a \lor-premise, then apply \lor-elimination to prove \Gamma for each disjunct
+3. Otherwise work backwards from the goal:
+   a. If the goal \Gamma is a conditional $(A \implies B)$ then assume A and prove B using \rightarrow-introduction.
+   b. IF the goal \Gamma is negative (\not A), then assume (\not \not A) and prove contradiction; use the \not-introduction.
+   c. if the goal \Gamma is a conjunction (A \land B) then prove A and prove B; use \land-introduction.
+   d. If the goal \Gamma is a disjunction (A \lor B) then prove one of A or B; use \lor-introduction.
+
+***** Examples from the oxford pack - click on them to go to solutions!
+
+ * [[http://logicmanual.philosophy.ox.ac.uk/pdfslides/p1.pdf][sol]]
+[[file:../images/20240806-174005_screenshot.png]]
+ * [[http://logicmanual.philosophy.ox.ac.uk/pdfslides/p2.pdf][sol]] 
+  [[file:../images/20240806-174111_screenshot.png]] 
+ * [[http://logicmanual.philosophy.ox.ac.uk/pdfslides/p3.pdf][sol]]
+[[file:../images/20240806-174208_p31.jpg]]
+ * [[http://logicmanual.philosophy.ox.ac.uk/pdfslides/p4.pdf][sol]]
+   [[file:../images/20240806-174334_p41.jpg]]
+ * [[http://logicmanual.philosophy.ox.ac.uk/pdfslides/p5.pdf][sol]]
+
+[[file:../images/20240806-174426_p51.jpg]]
+   
+** Derivations in ND: an Intuitive definition
+ Intuitively a derivation in ND is a finite tree-like object $D$, such that:
+ * The leaves of $D$ are labelled by assumptions (premises); these may be open or cancelled during the derivation.
+ * Every internal node of $D$ is labelled by a formula which is the conclusion of an instance of some ND rule, applied to the formulae labelling its children nodes.
+ * The roof of $D$ is labelled by the derived formula *the conclusion*  of $D$.
+*** Formally
+A derivation in ND is a tree-like object of the type $\frac{\mathcal{D}}{A}$, where each set of DND of such derivations, as well 
+
+as the set of open assumptions of each derivation  $\frac{\mathcal{D}}{A}$  , denoted by 
+ $O(\frac{\mathcal{D}}{A})$ are defined inductively as follows:
+ * REFER TO SLIDES
+ * deifitions over base cases and all logical connectives
+** Definition and soundness of ND
+*Definition* Given a finite set of propositional formulae \Gamma and a formula $A$,
+$A$ is derivable from the set of assumptions \Gamma, denoted by $\Gamma\vdash_{ND}A$ iff there is a derivation
+ $\frac{\mathcal{D}}{A}$ such that its set of open assumptions  $O(\frac{\mathcal{D}}{A})$ is \Gamma
+ * Now for any set of propostional formulae \Gamma and a formula $A$ , we define $\Gamma \vdash_{ND }A$ iff $\Gamma' \vdash_{ND} A$ for some finite set \Gamma' \subset \Gamma.
+*** Theorem Soundness of the system of natural deduction ND
+For every set of propositional formulae \Gamma and a formula $A$ if $\Gamma \vdash_{ND} A$ then $\Gamma \models A$
+***** TODO proof of this theorem 
+* Useful Resources for Natural deductions
+ * [[https://users.ox.ac.uk/~logicman/][Oxford logic pack]]

@@ -1,0 +1,169 @@
+% Created 2024-08-06 Tue 17:52
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bussproofs}
+\author{haize}
+\date{\today}
+\title{Deductive Reasoning in Propositional Logic}
+\hypersetup{
+ pdfauthor={haize},
+ pdftitle={Deductive Reasoning in Propositional Logic},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.4 (Org mode 9.8)}, 
+ pdflang={English}}
+\usepackage{biblatex}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Deductive Systems}
+\label{sec:org0b516f7}
+
+\begin{enumerate}
+\item Logical Consequence:
+\label{sec:org9c5f188}
+\[ A_1 , ..., A_n \models C
+\]
+\begin{itemize}
+\item and Logical validity:
+\end{itemize}
+\[ \models C\]
+These are semantic notions \(\rightarrow\) meaning of formulae. \\
+They require checking truth in all models for logic.
+\item Deductive systems:
+\label{sec:orge606e53}
+\begin{itemize}
+\item Are meant to capture the logical consequence and validity defined by the logical semantics, in terms of logical \textbf{\textbf{logical deductions (derivations)}}.
+\item A Logical derivation is a mechanical procedure, not reffering the meaning of the occuring formulae.
+\item In deductive systems logical consequence is replaced by \textbf{\textbf{deductive consequence}} and valid formulae (tautologies) - by derivable formulae (theorems).
+\end{itemize}
+\end{enumerate}
+\subsection{Basic Components of a deductive System}
+\label{sec:org6134568}
+\begin{itemize}
+\item Formal Logical language
+\item Axioms (Rules of inference)
+\item Inference (deduction) from a set of assumptions in a given deductive System \(D\):
+\end{itemize}
+\[A_1, ... A_n \vdash_D C\]
+\begin{itemize}
+\item Formulae derivable from no assumptions are called \textbf{\textbf{Theorems}} of \(D\):
+\end{itemize}
+\[\vdash_D C\]
+\subsection{Soundness and completeness of a deductive system}
+\label{sec:orge2f9323}
+\begin{itemize}
+\item A deductive system \(D\) is \textbf{sound} (correct) for a given logical semantics if \(D\) can \textbf{\textbf{only}} derive what is logically correct (valid):
+\end{itemize}
+\[A_1,...A_n \vdashD C \implies A_1, ... A_n \models C\]
+\begin{itemize}
+\item In particular:
+\end{itemize}
+\[\vdash_D C \implies \models C\]
+
+\begin{itemize}
+\item A system \(D\) is \textbf{Complete} for a given logical semantics if \(D\) can derive \textbf{every} valid logical consequence:
+\end{itemize}
+\[ A_1, ... A_n \models C \implies\ A_1,...A_n \vdashD C\]
+\begin{itemize}
+\item In particular
+\end{itemize}
+\[\models C \implies \vdash_D C \]
+\begin{itemize}
+\item A deductive system is *adequte for a given semantics if it is both sounnd AND complete:
+\end{itemize}
+\[ A_1, ... A_n \models C \iff \ A_1,...A_n \vdashD C\]
+\begin{itemize}
+\item in particular \[\models C \iff \vdash_D C \]
+\end{itemize}
+\subsection{Propositional natural deduction}
+\label{sec:org73ef3b8}
+\begin{itemize}
+\item Natural Deduction (ND): System for structural logic derivation from a set of assumptions, based on rules, specific to the logical connectives.
+\item There are Introduction and elimination rules for each connective.
+\item Intro and cancelation of assumptions, assumptions can be reused many times  before being discharged.
+\item Cancelation of assumptions: only when a rule allows it, not an obligation.
+\item All assumptions left at the end of a derivation must be declared.
+\end{itemize}
+\subsubsection{NOTE:}
+\label{sec:org8f2b56e}
+The fewer assumptions, the stronger the claim of the derivation.
+\subsubsection{Rules for propositional connectives}
+\label{sec:org6db2ecf}
+
+\begin{itemize}
+\item Refer to notes!
+\end{itemize}
+\begin{enumerate}
+\item Examples in notes!
+\label{sec:orge89eb98}
+\end{enumerate}
+\item Strategies for ND proofs in propositional logic
+\label{sec:org8843109}
+Given a set of premises \(\Delta\) and the goal of trying to prove \(\Gamma\):
+\begin{enumerate}
+\item Apply premises \(p_i \in \Delta\) to prove \(\Gamma\)
+\item If you need to use a \(\lor\)-premise, then apply \(\lor\)-elimination to prove \(\Gamma\) for each disjunct
+\item Otherwise work backwards from the goal:
+\begin{enumerate}
+\item If the goal \(\Gamma\) is a conditional \((A \implies B)\) then assume A and prove B using \(\rightarrow\)-introduction.
+\item IF the goal \(\Gamma\) is negative (\textlnot{} A), then assume (\textlnot{} \textlnot{} A) and prove contradiction; use the \textlnot{}-introduction.
+\item if the goal \(\Gamma\) is a conjunction (A \(\land\) B) then prove A and prove B; use \(\land\)-introduction.
+\item If the goal \(\Gamma\) is a disjunction (A \(\lor\) B) then prove one of A or B; use \(\lor\)-introduction.
+\end{enumerate}
+\end{enumerate}
+\begin{enumerate}
+\item Examples from the oxford pack - click on them to go to solutions!
+\label{sec:orge6e0b88}
+
+\begin{itemize}
+\item \href{http://logicmanual.philosophy.ox.ac.uk/pdfslides/p1.pdf}{sol}
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{../images/20240806-174005_screenshot.png}
+\end{center}
+\begin{itemize}
+\item \href{http://logicmanual.philosophy.ox.ac.uk/pdfslides/p2.pdf}{sol} 
+\begin{center}
+\includegraphics[width=.9\linewidth]{../images/20240806-174111_screenshot.png}
+\end{center}
+\item \href{http://logicmanual.philosophy.ox.ac.uk/pdfslides/p3.pdf}{sol}
+\end{itemize}
+\begin{center}
+\includegraphics[width=.9\linewidth]{../images/20240806-174208_p31.jpg}
+\end{center}
+\begin{itemize}
+\item \href{http://logicmanual.philosophy.ox.ac.uk/pdfslides/p4.pdf}{sol}
+\begin{center}
+\includegraphics[width=.9\linewidth]{../images/20240806-174334_p41.jpg}
+\end{center}
+\item \href{http://logicmanual.philosophy.ox.ac.uk/pdfslides/p5.pdf}{sol}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{../images/20240806-174426_p51.jpg}
+\end{center}
+\end{enumerate}
+\end{enumerate}
+\section{Useful Resources for Natural deductions}
+\label{sec:org3c83658}
+\begin{itemize}
+\item \href{https://users.ox.ac.uk/\~logicman/}{Oxford logic pack}
+\end{itemize}
+\end{document}

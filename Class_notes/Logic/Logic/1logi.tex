@@ -1,0 +1,290 @@
+% Created 2024-08-06 Tue 12:52
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bussproofs}
+\author{haize}
+\date{\today}
+\title{1logic}
+\hypersetup{
+ pdfauthor={haize},
+ pdftitle={1logic},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.4 (Org mode 9.8)}, 
+ pdflang={English}}
+\usepackage{biblatex}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Propositional Logic}
+\label{sec:orgcdade8e}
+\(A \implies B\)
+This evalutes true if A is \uline{false} \textbf{OR} B is \uline{true}
+\subsection{Logical Constants}
+\label{sec:org7a05df5}
+\(\top\): True propostion
+
+\(\bot\): False propstion
+\subsection{Variables}
+\label{sec:orgbaa1885}
+\begin{itemize}
+\item p, q, r : lower case roman letters.
+\end{itemize}
+\subsection{Construction Trees}
+\label{sec:org0028fa3}
+\begin{itemize}
+\item Taking any subtree is a valid logical formulae itself
+\item the size of the graph is the number of nodes (variables + connectives)
+\item The main connective is the one applied last, non-leaf node
+\item create the tree from the inside
+\end{itemize}
+\subsection{Parsing Trees}
+\label{sec:orgcc04d8b}
+\begin{itemize}
+\item Start constructing these from the main connective
+\item Top to bottom
+\end{itemize}
+\subsection{Truth Tables}
+\label{sec:orgf213b60}
+\begin{itemize}
+\item ternary function mapping \(\{0,1\} \rightarrow \{0,1\}\)
+\end{itemize}
+\subsection{Tautologies}
+\label{sec:org8a0a8f8}
+\begin{itemize}
+\item propositionnaly valid formula that is always True.
+\end{itemize}
+\subsubsection{Notation}
+\label{sec:org78f02d2}
+\begin{itemize}
+\item \(\models A\)
+\end{itemize}
+\begin{enumerate}
+\item Examples
+\label{sec:orgc2263e2}
+\begin{itemize}
+\item \(\models\) p \(\lor\) \textlnot{} p - Law of excluded middle
+\item \(\models\) \textlnot{}(p \(\land\) \textlnot{} p) - Law of non-contradiction
+\item \(\models\) ((p \(\land\)(p \(\implies\) q))\(\implies\) q) - modus ponents
+\begin{itemize}
+\item Set q false, left must be true so all true.
+\end{itemize}
+\end{itemize}
+\end{enumerate}
+\subsection{Contradictions}
+\label{sec:orgfc8936a}
+\begin{itemize}
+\item always false formula
+\end{itemize}
+\begin{enumerate}
+\item If a formula is not a contradiction, then it is satisfiable
+\label{sec:orgc713418}
+\end{enumerate}
+\subsection{Propositional Logical Consequence}
+\label{sec:org0236754}
+$$A_1 , A_2 ,..., A_n \models C$$
+\begin{itemize}
+\item if C is true whenever all \(A_i\) are true.
+\item \textbf{Tautology} is a special case of consequence
+\end{itemize}
+$$ \phi \models C = \models C$$
+\subsubsection{Consiquence is reducible to validity}
+\label{sec:org2fde082}
+$$A_1 , ... , A_n \models B $$ is equivalent to: \(A_1 \land ... \land A_n \models B\)  \\
+then $$\models (A_1 \land ... \land A_n) \implies B$$
+\subsection{Sound Rules of propositional inference}
+\label{sec:orgbafd668}
+\begin{itemize}
+\item A rule of propositional inference is a scheme where \(P_i\) are the premises we assume and \(C\) is the conclusion $$\frac{P_1 , ..., P_n}{C}$$
+\item An inference rule is \textbf{logically sound} if $$P_1 , ..., P_n \models C$$
+\item Putting concrete propostions (substituting for variables) is a propositional inference.
+\end{itemize}
+\subsection{How to check correctness}
+\label{sec:orgfcb9638}
+Check if a rule is sound : $$\frac{S, S \implies h}{h}$$ so check if \(S, S \implies h \overset{?}{\models} h\) \\
+\(\therefore\) the inference is correct based on a sound rule, but can't say rules is sound
+\subsection{Fallacies of Implication (Derivative Implication)}
+\label{sec:orge2d72cb}
+\begin{itemize}
+\item converse: \(B \implies A\)
+\item inverse: \textlnot{} A \(\implies\) \textlnot{} B
+\item contrapositve: \textlnot{} B \(\implies\) \textlnot{} A this is \textbf{sound}.
+\end{itemize}
+\subsection{Truth assignments in propostional logical}
+\label{sec:orgcffe910}
+\begin{itemize}
+\item PVAR : propostional variables (countably infinite)
+\item FOR : set of all propositional formulas
+\end{itemize}
+
+A truth assignment is  a map $\backslash$\ v : PVAR \(\rightarrow\) \{T, F\} and \\
+\(\bar{v}\):FORM \(\rightarrow\)\{T,F\}
+\begin{enumerate}
+\item Note the following:
+\label{sec:orgd1dffb9}
+\begin{itemize}
+\item \(\bar{v}(\top)\) = T
+\item \(\bar{v}(\bot)\) = F
+\item \(\bar{v}(p)\) = v(p)
+\end{itemize}
+* $\bar{v}$(\not A) = $$\case{T , $\bar{v}$(A) = F}$$
+\end{enumerate}
+\subsection{Logical Equivalence}
+\label{sec:org78ae8dd}
+A \(\equiv\) B both obtain the same truth value under all truth valuations \\
+$$A \equiv B \iff \bar{v}(A) = \bar{v}(B)$$ for all truth assignments if v
+\subsubsection{De' Morgans Law}
+\label{sec:org4652064}
+\textlnot{}(p\(\land\) q) \(\equiv\) \textlnot{} p \(\lor\) \textlnot{} q
+\subsubsection{this one}
+\label{sec:orgab86df3}
+p \(\land\) (p \(\lor\) q) \(\equiv\) p \(\land\) p \(\equiv\) p$\backslash$
+\subsection{Relating Logical Equivalence, consequence and validity}
+\label{sec:org01c9f93}
+\begin{enumerate}
+\item Reducible to validity
+\label{sec:orgdb38a9f}
+$$A \equiv B\  iff \models A \iff B $$
+\begin{enumerate}
+\item Proof in notes
+\label{sec:orgbd934f0}
+Suppose A \(\equiv\) B \\
+Let v:PVAR\(\rightarrow\) \{T,F\} be arbitrary \\
+since A \(\equiv\) B, \(\bar{v}\)(A) = \(\bar{v}\)(B) \\
+\(\therefore\) \(\bar{v}\)(A \(\iff\) B) = T \\
+Since v was arbitrary we conclude \\
+\(\models\) A \(\iff\) B
+\end{enumerate}
+\item Reducible to Logical Consequence
+\label{sec:org9eeb075}
+A \(\equiv\) B iff both A \(\models\) B and \(B \models A\)
+\end{enumerate}
+\subsection{\(\equiv\) is an equivalence relation}
+\label{sec:orgf62762c}
+\begin{enumerate}
+\item reflexive A\(\equiv\) A
+\item symmetric if A\(\equiv\) B then B \(\equiv\) A
+\item transitive if A \(\equiv\) B and B \(\equiv\) C then A \(\equiv\) C
+\end{enumerate}
+\subsection{\(\equiv\) is a congruence wrt to logical connectives}
+\label{sec:org76c6592}
+\begin{itemize}
+\item if A \(\equiv\) B then \textlnot{} A \(\equiv\) \textlnot{} B \\
+\item if \(A_1 \equiv B_1\) and \(A_2 \equiv B_2\) then (A\textsubscript{1} \(\cdot\) A\textsubscript{2} ) \(\equiv\) (B\textsubscript{1} \(\cdot\) B\textsubscript{2}) for all \(\cdot\) = \{\(\lor\), \(\land\), \(\implies\), \(\iff\)\}
+\end{itemize}
+\begin{enumerate}
+\item Theorem Equivalent replacement
+\label{sec:org85e75f6}
+if A \(\equiv\) B then C(A/p) \(\equiv\) C(B/p) 
+
+We replace p with A all at once, the same for B
+\begin{enumerate}
+\item Proof in notes \(\rightarrow\) by induction on C
+\label{sec:orgff33bc4}
+By Induction on C: 
+\begin{enumerate}
+\item \(C\) is \(\bot\) Then  \(C(A/p)\) = \(\bot\) and C(B/p) = \(\bot\) \\
+\end{enumerate}
+\(\therefore\)  \(C(A/p) = \bot \equiv \bot = C(B/p)\)
+\begin{enumerate}
+\item \(C\) is \(\top\) same as above.
+\item 1. \(C\)  is \(q\) where \(q \neq  p\), then \(C(A/p) = q\) and \(C(B/p) = q\) \\
+\end{enumerate}
+SO \(C(A/p) = q \equiv q = C(B/p)\)
+\begin{enumerate}
+\item 2. \(C\) is \(p\) , then \\
+\end{enumerate}
+\(C(A/p) = A \equiv B = C(B/p)\) \\
+Inductive Hypothesis:  Suppose holds for formulas \(C_1\) and \(C_2\) \\
+\(C_1 (A/p) \equiv C_1 (B/p)\) and \\
+\(C_2(A/p) \equiv C_2(B/p)\) 
+\begin{enumerate}
+\item C  is \textlnot{} C : \\
+\end{enumerate}
+Then \(C(A/p) = \not C(A/p) \overset{\star}{\equiv} \not C(B/p) =C(B/p)\), \\
+Where \(\star\) holds by the Inductive Hypothesis and the fact that \(\equiv\) is a congruence wrt to propositional connectives. 
+\begin{enumerate}
+\item \(C\) is \((C_1 \cdot C_2)\) for some \(\cdot = \{\land \lor \implies \iff \}\) \\
+\end{enumerate}
+Then \(C(A/p) = (C_1(A/p) \cdot C_2(A/p))\) but by inductive hypothesis \\
+\(C_1 (A/p) \equiv C_1 (B/p)\) and \\
+\(C_2(A/p) \equiv C_2(B/p)\)  \\
+So by the fact that \(\equiv\) us a congruence wrt to propositional connectives; \\
+\(C(A/p) = ((C_1(A/p) \cdot C_2(A/p))\equiv(C(A/p) = (C_1(B/p) \cdot C_2(B/p))=C(B/p)\) \\
+\(\therefore\) C(A/p) \(\equiv\) C(B/p)
+\end{enumerate}
+\end{enumerate}
+\subsubsection{Important Logical Equivalence}
+\label{sec:orgacba5bb}
+\begin{itemize}
+\item Idempotency : applying more than once makes no difference p\(\land\) p and p\(\lor\) p
+\item Commutativity:
+\item Associativity:
+\item Distributivity:
+\item BUNCH OF STUFF AT THE END OF SECTION 1.3
+\end{itemize}
+\begin{enumerate}
+\item Know important \(\equiv\) for negation how it affects \(\implies\) and \(\iff\)
+\label{sec:org2da9448}
+\end{enumerate}
+\subsection{Inductive Definitions}
+\label{sec:org564c100}
+\subsubsection{Structured induction}
+\label{sec:org0eccdc6}
+Important when an infinite set of structured objects are to be defined 
+
+BNF \\
+$$w:= \epsilon | wa$$,  where \(a\in A\)
+\begin{enumerate}
+\item Example proof The number of right parenthesis is the same as left in logical formalae\hfill{}\textsc{ATTACH}
+\label{sec:orgd75f034}
+
+
+\emph{l} : \(\mathbf{FOR} \rightarrow \mathbb{N}\) \\
+\emph{r} : \(\mathbf{FOR} \rightarrow \mathbb{N}\) \\
+To prove /l/(\(\psi\))= /r/(\(\psi\)) \(\forall \psi\) \(\in\) \(\mathbf{FORM}\)
+
+
+\begin{enumerate}
+\item if \(\psi\) is \(\top\), then \emph{l} (\(\psi\)) = \emph{l} (\(\top\)) = 0 = \emph{r} (\(\top\)) = \emph{r} (\(\psi\)) \\
+if \(\psi\) is \(\bot\), then \emph{l} (\(\psi\)) = \emph{l} (\(\bot\)) = 0 = \emph{r} (\(\bot\)) = \emph{r} (\(\psi\))
+\item if \(\psi\) is \(p\) then \emph{l} (\(\psi\)) = \emph{l} (p) = 0 = \emph{r} (p) = \emph{r} ($\backslash$\(\psi\))
+\item Suppose \emph{l} (A) = \emph{r} (A) and A is \textlnot{} A: \\
+\end{enumerate}
+then \emph{l} (\(\psi\)) = \emph{l} (\textlnot{} A) = \emph{l} (A) =/r/ (A) = \emph{r} (\textlnot{} A) = \emph{r} (\(\psi\))
+\begin{enumerate}
+\item Suppose \emph{l/(A)  = /r} (A) and \emph{l} (B) = \emph{r} (B) and \(\psi\) is (A \(\cdot\) B), for \(\cdot\) = \{\(\land\), \(\lor\), \(\implies\), \(\iff\)\} \\
+\end{enumerate}
+Then \emph{l} (\(\psi\)) = \emph{l} ((A \(\cdot\) B) = \emph{l} (A) + \emph{l} (B) + 1 \\
+Now by IH = \emph{r} (A) + \emph{r} (B) +1 = \emph{r} ((A \(\cdot\) B)) = \emph{r} (\(\psi\))
+\end{enumerate}
+\subsection{Complex Proof}
+\label{sec:org53607b5}
+We will prove \(A \land B \implies B \implies A\) using natural deduction.
+
+\begin{LATEX}
+\begin{prooftree}
+  \AxiomC{$A \land B$}
+  \UnaryInfC{$A$}
+  \AxiomC{$A \land B$}
+  \UnaryInfC{$B$}
+  \BinaryInfC{$B \land A$}
+\end{prooftree}
+\end{LATEX}
+\end{document}
