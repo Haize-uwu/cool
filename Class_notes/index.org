@@ -2,10 +2,11 @@
 #+author: haize
 #+title: Index page for notes
 #+DATE: %(format-time-string "%Y-%m-%d %a %H:%M")
-#+TOC:nil
+#+Options: toc:nil
+ Page last updated: <2024-08-16 Fri 15:30> 
 
 * Logic
  * [[file:Logic/1logi.pdf][Chapter 1]]
- * [[file:Logic/Chapter2.pdf][Chapter 2]]
+ * [[file:Logic/Chapter2.pdf][Chapter 2]] 
 * Computer vision
 
