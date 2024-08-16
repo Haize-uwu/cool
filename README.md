@@ -3,6 +3,8 @@ checking if org export to html works
 [test it out](https://html-preview.github.io/?url=https://github.com/Haize-uwu/cool/blob/main/testinglinks.html)
 # cool
 resources for bunch of stuff I want to learn
+# Some class notes
+
 
 # IMPORTANT
 - [dive into deep learning book](https://www.d2l.ai/)
