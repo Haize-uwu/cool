@@ -8,5 +8,8 @@
 * Logic
  * [[file:Logic/1logi.pdf][Chapter 1]]
  * [[file:Logic/Chapter2.pdf][Chapter 2]] 
+*** Resources 
+- [[https://leanprover.github.io/logic_and_proof/index.html][Natural Deduction + LEAN]]
+- [[https://users.ox.ac.uk/~logicman/][Oxford Logic Pack]]
 * Computer vision
 
