@@ -13,6 +13,6 @@
 - [[https://users.ox.ac.uk/~logicman/][Oxford Logic Pack]]
 - [[https://www.logicmatters.net/ifl/#book][Logic Matters Solutions and book]]
 - [[https://builds.openlogicproject.org/][Open Logic project]]
-  
+- [[https://www.csd.uwo.ca/~abrandt5/teaching/DiscreteStructures/Chapter2/set-theory.html][Really cool site]]
 * Computer vision
 
