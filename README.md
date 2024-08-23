@@ -35,6 +35,7 @@ resources for bunch of stuff I want to learn
 # Haskell
 - [learning haskell](https://www.cis.upenn.edu/~cis1940/spring13/lectures.html)
 # Graphics
+- [webgl tutorials that are actually interactive](https://webglfundamentals.org/)
 ## [theoretical stuff](https://www.scratchapixel.com/index.html)
 ## godot
 - [vector math](https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html#doc-vector-math)
