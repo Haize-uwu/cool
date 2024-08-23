@@ -11,5 +11,6 @@
 *** Resources 
 - [[https://leanprover.github.io/logic_and_proof/index.html][Natural Deduction + LEAN]]
 - [[https://users.ox.ac.uk/~logicman/][Oxford Logic Pack]]
+- [[Logic Matters Solutions and book][https://www.logicmatters.net/ifl/#book]]
 * Computer vision
 
