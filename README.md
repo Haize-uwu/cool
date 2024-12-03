@@ -5,7 +5,7 @@ checking if org export to html works
 resources for bunch of stuff I want to learn
 # Some class notes
 - [Logic](/Class_notes/index.html)
-
+- [RESOURCE FOR HPC](https://hpc.raum-brothers.eu/index.html)
 # IMPORTANT
 - [dive into deep learning book](https://www.d2l.ai/)
 - [LEAN](https://leanprover-community.github.io/learn.html)
